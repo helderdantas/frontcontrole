@@ -13,7 +13,7 @@ export default class ColecaoEquipeSuport implements EquipeSuportRepositorio {
                 nome: equipeSuport.nome,
             };
             console.log('entrei')
-            var response = await axios.post('http://localhost:3030/criarEquipeSuport/', body);
+            var response = await axios.post(`${process.env.NEXT_PUBLIC_URL}criarEquipeSuport/`, body);
             console.log(response)
             var data = response.data
             return data
@@ -28,7 +28,7 @@ export default class ColecaoEquipeSuport implements EquipeSuportRepositorio {
 
                 let config = {
                     method: 'put',
-                    url: 'http://localhost:3030/updateCampoAtivoEquipeSuport/' + equipeSuport.id,
+                    url: `${process.env.NEXT_PUBLIC_URL}updateCampoAtivoEquipeSuport/` + equipeSuport.id,
                     headers: {}
                 };
                 await axios(config)
@@ -44,7 +44,7 @@ export default class ColecaoEquipeSuport implements EquipeSuportRepositorio {
     async obterEquipeSuportAtivos(): Promise<EquipeSuport[]> {
         try {
 
-            let response = await axios.get('http://localhost:3030/listarEquipeSuportAtivos')
+            let response = await axios.get(`${process.env.NEXT_PUBLIC_URL}listarEquipeSuportAtivos`)
             return response.data
 
         } catch (error) {
@@ -56,7 +56,7 @@ export default class ColecaoEquipeSuport implements EquipeSuportRepositorio {
     async obterTodosEquipeSuport(): Promise<EquipeSuport[]> {
         try {
 
-            let response = await axios.get('http://localhost:3030/listarTodosEquipeSuport')
+            let response = await axios.get(`${process.env.NEXT_PUBLIC_URL}listarTodosEquipeSuport`)
             return response.data
 
         } catch (error) {

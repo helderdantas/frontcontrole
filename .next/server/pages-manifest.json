@@ -1,0 +1,15 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/adm/equipamentos": "pages/adm/equipamentos.html",
+  "/adm/equipeSuport": "pages/adm/equipeSuport.html",
+  "/adm/setores": "pages/adm/setores.html",
+  "/adm/subSetores": "pages/adm/subSetores.html",
+  "/api/api": "pages/api/api.js",
+  "/": "pages/index.html",
+  "/suport/edicao": "pages/suport/edicao.html",
+  "/suport": "pages/suport.html",
+  "/suport/relatorio": "pages/suport/relatorio.html",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}

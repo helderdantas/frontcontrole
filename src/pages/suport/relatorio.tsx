@@ -108,7 +108,7 @@ export default function Suport() {
     async function quantidadeChamadosSetor(dataIncial: string, dataFinal: string) {
 
         //busca os setores ativos no banco e atribui a variavel local response
-        let response = await axios.get('http://localhost:3030/listarSetoresAtivos')
+        let response = await axios.get(`${process.env.NEXT_PUBLIC_URL}listarSetoresAtivos`)
         //mapea a o resultado do response e cria uma lista de setores e atribui a variavel listaSetores
         let listaSetores = response.data.map(setor => setor.nome)
 
@@ -148,7 +148,7 @@ export default function Suport() {
 
 
         //busca os suportes ativos no banco e atribui a variavel local response
-        let response = await axios.get('http://localhost:3030/listarEquipeSuportAtivos')
+        let response = await axios.get(`${process.env.NEXT_PUBLIC_URL}listarEquipeSuportAtivos`)
         //mapea a o resultado do response e cria uma lista de suports e atribui a variavel listaSetores
         let suportes = response.data.map((equipeSuport: { nome: any; }) => equipeSuport.nome)
 
@@ -183,7 +183,7 @@ export default function Suport() {
     async function quantChamadosEquipamento(dataIncial: string, dataFinal: string) {
 
         //busca os equipamentos ativos no banco e atribui a variavel local response
-        let response = await axios.get('http://localhost:3030/listarEquipamentosAtivos')
+        let response = await axios.get(`${process.env.NEXT_PUBLIC_URL}listarEquipamentosAtivos`)
         //mapea a o resultado do response e cria uma lista de equipamentos e atribui a variavel listaSetores
         let equipamentos = response.data.map((equipamento: { nome: any; }) => equipamento.nome)
 

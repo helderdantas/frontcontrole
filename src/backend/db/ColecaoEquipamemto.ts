@@ -13,7 +13,7 @@ export default class ColecaoEquipamento implements EquipamentoRepositorio {
                 nome: equipamento.nome,
             };
             console.log('entrei')
-            var response = await axios.post('http://localhost:3030/criarEquipamento/', body);
+            var response = await axios.post(`${process.env.NEXT_PUBLIC_URL}criarEquipamento/`, body);
             console.log(response)
             var data = response.data
             return data
@@ -28,7 +28,7 @@ export default class ColecaoEquipamento implements EquipamentoRepositorio {
 
                 let config = {
                     method: 'put',
-                    url: 'http://localhost:3030/updateCampoAtivoEquipamento/' + equipamento.id,
+                    url: `${process.env.NEXT_PUBLIC_URL}updateCampoAtivoEquipamento/` + equipamento.id,
                     headers: {}
                 };
                 await axios(config)
@@ -44,7 +44,7 @@ export default class ColecaoEquipamento implements EquipamentoRepositorio {
     async obterEquipamentosAtivos(): Promise<Equipamento[]> {
         try {
 
-            let response = await axios.get('http://localhost:3030/listarEquipamentosAtivos')
+            let response = await axios.get(`${process.env.NEXT_PUBLIC_URL}listarEquipamentosAtivos`)
             return response.data
 
         } catch (error) {
@@ -56,7 +56,7 @@ export default class ColecaoEquipamento implements EquipamentoRepositorio {
     async obterTodosEquipamentos(): Promise<Equipamento[]> {
         try {
 
-            let response = await axios.get('http://localhost:3030/listarTodosEquipamentos')
+            let response = await axios.get(`${process.env.NEXT_PUBLIC_URL}listarTodosEquipamentos`)
             return response.data
 
         } catch (error) {

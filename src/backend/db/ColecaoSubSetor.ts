@@ -14,7 +14,7 @@ export default class ColecaoSubSetor implements SubSetorRepositorio {
                 nomeSetor:subSetor.nomeSetor
             };
             console.log('entrei')
-            var response = await axios.post('http://localhost:3030/criarSubSetor/', body);
+            var response = await axios.post(`${process.env.NEXT_PUBLIC_URL}criarSubSetor/`, body);
             console.log(response)
             var data = response.data
             return data
@@ -29,7 +29,7 @@ export default class ColecaoSubSetor implements SubSetorRepositorio {
 
                 let config = {
                     method: 'put',
-                    url: 'http://localhost:3030/updateCampoAtivoSubSetor/' + subSetor.id,
+                    url: `${process.env.NEXT_PUBLIC_URL}updateCampoAtivoSubSetor/` + subSetor.id,
                     headers: {}
                 };
                 await axios(config)
@@ -45,7 +45,7 @@ export default class ColecaoSubSetor implements SubSetorRepositorio {
     async obterSubSetoresAtivos(): Promise<SubSetor[]> {
         try {
 
-            let response = await axios.get('http://localhost:3030/listarSubSetoresAtivos')
+            let response = await axios.get(`${process.env.NEXT_PUBLIC_URL}listarSubSetoresAtivos`)
             return response.data
 
         } catch (error) {
@@ -57,7 +57,7 @@ export default class ColecaoSubSetor implements SubSetorRepositorio {
     async obterTodosSubSetores(): Promise<SubSetor[]> {
         try {
 
-            let response = await axios.get('http://localhost:3030/listarTodosSubSetores')
+            let response = await axios.get(`${process.env.NEXT_PUBLIC_URL}listarTodosSubSetores`)
             return response.data
 
         } catch (error) {

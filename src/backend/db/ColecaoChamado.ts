@@ -3,6 +3,7 @@ import ChamadoRepositorio from "../../core/chamado/ChamadoRepositorio";
 const axios = require('axios');
 
 
+
 export default class ColecaoChamado implements ChamadoRepositorio {
     async criarChamado(chamado: Chamado): Promise<Chamado> {
         try {
@@ -21,7 +22,7 @@ export default class ColecaoChamado implements ChamadoRepositorio {
 
             };
             
-            var response = await axios.post('http://localhost:3030/criarChamado/', body);
+            var response = await axios.post(`${process.env.NEXT_PUBLIC_URL}criarChamado/`, body);
             console.log(response)
             var data = response.data
             return data
@@ -35,7 +36,7 @@ export default class ColecaoChamado implements ChamadoRepositorio {
             try {
                 let config = {
                     method: 'put',
-                    url: 'http://localhost:3030/updateChamado/' + chamado.id,
+                    url: `${process.env.NEXT_PUBLIC_URL}updateChamado/` + chamado.id,
                     data: {
                         subSetor: chamado.subSetor,
                         equipamentoComDefeito: chamado.equipamentoComDefeito,
@@ -63,7 +64,7 @@ export default class ColecaoChamado implements ChamadoRepositorio {
 
                 let config = {
                     method: 'put',
-                    url: 'http://localhost:3030/updateCampoAbertoChamado/' + chamado.id,
+                    url: `${process.env.NEXT_PUBLIC_URL}updateCampoAbertoChamado/` + chamado.id,
                     headers: {}
                 };
                 await axios(config)
@@ -81,7 +82,7 @@ export default class ColecaoChamado implements ChamadoRepositorio {
     async obterChamadosAbertos(): Promise<Chamado[]> {
         try {
 
-            let response = await axios.get('http://localhost:3030/listarChamadosAbertos')
+            let response = await axios.get(`${process.env.NEXT_PUBLIC_URL}listarChamadosAbertos`)
             return response.data
 
         } catch (error) {
@@ -93,7 +94,7 @@ export default class ColecaoChamado implements ChamadoRepositorio {
     async obterTodosChamados(): Promise<Chamado[]> {
         try {
 
-            let response = await axios.get('http://localhost:3030/listarTodosChamados')
+            let response = await axios.get(`${process.env.NEXT_PUBLIC_URL}listarTodosChamados`)
             return response.data
 
         } catch (error) {
@@ -110,7 +111,7 @@ export default class ColecaoChamado implements ChamadoRepositorio {
                 dataInicial:dataInicial,
                 dataFinal:dataFinal,
                 }
-            const response = await axios.post('http://localhost:3030/chamadosPorSetor', body)
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_URL}chamadosPorSetor`, body)
             return (response.data)
 
         } catch (error) {
@@ -127,7 +128,7 @@ export default class ColecaoChamado implements ChamadoRepositorio {
                 dataInicial:dataInicial,
                 dataFinal:dataFinal,
                 }
-            const response = await axios.post('http://localhost:3030/chamadosPorSuport', body)
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_URL}chamadosPorSuport`, body)
             return (response.data)
 
         } catch (error) {
@@ -144,7 +145,7 @@ export default class ColecaoChamado implements ChamadoRepositorio {
                 dataInicial:dataInicial,
                 dataFinal:dataFinal,
                 }
-            const response = await axios.post('http://localhost:3030/chamadosPorTipoEquipamento', body)
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_URL}chamadosPorTipoEquipamento`, body)
             return (response.data)
 
         } catch (error) {

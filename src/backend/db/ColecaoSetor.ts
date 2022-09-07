@@ -13,7 +13,7 @@ export default class ColecaoSetor implements SetorRepositorio {
                 nome: setor.nome,
             };
             console.log('entrei')
-            var response = await axios.post('http://localhost:3030/criarSetor/', body);
+            var response = await axios.post(`${process.env.NEXT_PUBLIC_URL}criarSetor/`, body);
             console.log(response)
             var data = response.data
             return data
@@ -28,7 +28,7 @@ export default class ColecaoSetor implements SetorRepositorio {
 
                 let config = {
                     method: 'put',
-                    url: 'http://localhost:3030/updateCampoAtivoSetor/' + setor.id,
+                    url: `${process.env.NEXT_PUBLIC_URL}updateCampoAtivoSetor/` + setor.id,
                     headers: {}
                 };
                 await axios(config)
@@ -44,7 +44,7 @@ export default class ColecaoSetor implements SetorRepositorio {
     async obterSetoresAtivos(): Promise<Setor[]> {
         try {
 
-            let response = await axios.get('http://localhost:3030/listarSetoresAtivos')
+            let response = await axios.get(`${process.env.NEXT_PUBLIC_URL}listarSetoresAtivos`)
             return response.data
 
         } catch (error) {
@@ -56,7 +56,7 @@ export default class ColecaoSetor implements SetorRepositorio {
     async obterTodosSetores(): Promise<Setor[]> {
         try {
 
-            let response = await axios.get('http://localhost:3030/listarTodosSetores')
+            let response = await axios.get(`${process.env.NEXT_PUBLIC_URL}listarTodosSetores`)
             return response.data
 
         } catch (error) {
