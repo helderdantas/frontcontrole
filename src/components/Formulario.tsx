@@ -104,27 +104,16 @@ export default function Formulario(props: FormularioProps) {
                     texto="Equipamento com defeito"
                     valor={equipamentoComDefeito.toUpperCase()}
                     valorMudou={setEquipamentoComDefeito}
-                    
+
 
                 />
             )}
+            <Entrada
+                texto="Tombo do Equipamento"
+                valor={equipamentoTombo.toUpperCase()}
+                valorMudou={setEquipamentoTombo}
 
-            {id ? (
-                <Entrada
-                    texto="Tombo do Equipamento"
-                    valor={equipamentoTombo.toUpperCase()}
-                    somenteLeitura
-
-                />
-            ) : (
-                <Entrada
-                    texto="Tombo do Equipamento"
-                    valor={equipamentoTombo.toUpperCase()}
-                    valorMudou={setEquipamentoTombo}
-
-                />
-            )}
-
+            />
             {id ? (
                 <Entrada
                     texto="Descrição"
@@ -145,15 +134,15 @@ export default function Formulario(props: FormularioProps) {
                 texto="Nome do suport"
                 valor={equipeSuport.toUpperCase()}
                 valorMudou={setEquipeSuport}
-                
+
             />
             {id ? (
                 <EntradaListaStatus
-                texto="Status"
-                valor={status.toUpperCase()}
-                valorMudou={setStatus}
+                    texto="Status"
+                    valor={status.toUpperCase()}
+                    valorMudou={setStatus}
                 />
-            ): false }
+            ) : false}
             {!id ? (
                 <Entrada
                     texto="Observacao"

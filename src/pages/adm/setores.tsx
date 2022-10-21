@@ -86,6 +86,9 @@ export default function Suport() {
                                     onClick={novoSetor}>
                                     Novo setor
                                 </Botao>
+                                <Botao cor="blue" className="mb-3 m-2">
+                                    <a href="/suport">Suport</a>
+                                </Botao>
 
                             </div>
 

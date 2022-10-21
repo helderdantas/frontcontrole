@@ -363,11 +363,7 @@ function Formulario(props) {
                 valor: equipamentoComDefeito.toUpperCase(),
                 valorMudou: setEquipamentoComDefeito
             }),
-            id ? /*#__PURE__*/ jsx_runtime_.jsx(Entrada/* default */.Z, {
-                texto: "Tombo do Equipamento",
-                valor: equipamentoTombo.toUpperCase(),
-                somenteLeitura: true
-            }) : /*#__PURE__*/ jsx_runtime_.jsx(Entrada/* default */.Z, {
+            /*#__PURE__*/ jsx_runtime_.jsx(Entrada/* default */.Z, {
                 texto: "Tombo do Equipamento",
                 valor: equipamentoTombo.toUpperCase(),
                 valorMudou: setEquipamentoTombo

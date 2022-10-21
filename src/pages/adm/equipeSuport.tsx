@@ -86,6 +86,9 @@ export default function Suport() {
                                     onClick={novoEquipeSuport}>
                                     Novo equipeSuport
                                 </Botao>
+                                <Botao cor="blue" className="mb-3 m-2">
+                                    <a href="/suport">Suport</a>
+                                </Botao>
 
                             </div>
 

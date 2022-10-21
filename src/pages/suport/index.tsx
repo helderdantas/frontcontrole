@@ -77,22 +77,22 @@ export default function Suport() {
                             <div className="mt-5 flex justify-end">
 
                                 <Botao cor="blue" className="mb-3 m-2">
-                                    <a href="/suport/edicao" target="_blank">Edição dos Chamados</a>
+                                    <a href="/suport/edicao">Edição dos Chamados</a>
                                 </Botao>
                                 <Botao cor="blue" className="mb-3 m-2">
                                     <a href="/suport/relatorio" target="_blank">Relatórios</a>
                                 </Botao>
                                 <Botao cor="blue" className="mb-3 m-2">
-                                    <a href="/adm/setores" target="_blank">Listar Setores</a>
+                                    <a href="/adm/setores" >Listar Setores</a>
                                 </Botao>
                                 <Botao cor="blue" className="mb-3 m-2">
-                                    <a href="/adm/subSetores" target="_blank">Listar Sub-Setores</a>
+                                    <a href="/adm/subSetores">Listar Sub-Setores</a>
                                 </Botao>
                                 <Botao cor="blue" className="mb-3 m-2">
-                                    <a href="/adm/equipamentos" target="_blank">Listar tipos de Equipamentos</a>
+                                    <a href="/adm/equipamentos">Listar tipos de Equipamentos</a>
                                 </Botao>
                                 <Botao cor="blue" className="mb-3 m-2">
-                                    <a href="/adm/equipeSuport" target="_blank">Listar Equipe de Suporte</a>
+                                    <a href="/adm/equipeSuport">Listar Equipe de Suporte</a>
                                 </Botao>
 
 

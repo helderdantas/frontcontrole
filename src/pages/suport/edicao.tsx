@@ -6,7 +6,6 @@ import Layout from "../../components/Layout";
 import Tabela from "../../components/Tabela";
 import Chamado from "../../core/chamado/Chamado";
 import ChamadoRepositorio from "../../core/chamado/ChamadoRepositorio";
-import { useTimeout } from "usehooks-ts"
 
 
 export default function Suport() {
@@ -98,6 +97,10 @@ export default function Suport() {
                                 <Botao cor="blue" className="mb-3 m-2"
                                     onClick={novoChamado}>
                                     Novo chamado
+                                </Botao>
+
+                                <Botao cor="blue" className="mb-3 m-2">
+                                    <a href="/suport">Suport</a>
                                 </Botao>
 
                             </div>
