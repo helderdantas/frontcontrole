@@ -5,6 +5,8 @@ const axios = require('axios');
 
 
 export default class ColecaoControle implements ControleRepositorio {
+  
+  
    
     async criarControle(controle: Controle): Promise<Controle> {
         try {
@@ -14,8 +16,11 @@ export default class ColecaoControle implements ControleRepositorio {
                 subsetor: controle.subsetor,
                 ilha: controle.ilha,
                 cpu: controle.cpu,
+                cpunumeroserie: controle.cpunumeroserie,
                 monitor1: controle.monitor1,
+                monitor1numeroserie: controle.monitor1numeroserie,
                 monitor2: controle.monitor2,
+                monitor2numeroserie: controle.monitor2numeroserie,
                 impressora: controle.impressora,
                 telefone: controle.telefone,
                 observacao: controle.observacao,
@@ -43,8 +48,11 @@ export default class ColecaoControle implements ControleRepositorio {
                     data: {
                         ilha: controle.ilha,
                         cpu: controle.cpu,
+                        cpunumeroserie: controle.cpunumeroserie,
                         monitor1: controle.monitor1,
+                        monitor1numeroserie: controle.monitor1numeroserie,
                         monitor2: controle.monitor2,
+                        monitor2numeroserie: controle.monitor2numeroserie,
                         impressora: controle.impressora,
                         telefone: controle.telefone,
                         observacao: controle.observacao,
@@ -102,7 +110,9 @@ export default class ColecaoControle implements ControleRepositorio {
             };
             let response = await axios(config)
             //let response = await axios.get(`${process.env.NEXT_PUBLIC_URL}listarControles`)
+            console.log(response.data);
             return response.data
+            
 
         } catch (error) {
             return error
@@ -166,6 +176,20 @@ export default class ColecaoControle implements ControleRepositorio {
         }
     }
 
+    async filtrarPorCpuNumeroSerie(cpunumeroserie: string): Promise<Controle[]> {
+        try {
+            if (cpunumeroserie) {
+
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorCpu/` + cpunumeroserie)
+                return response.data
+            }
+
+        } catch (error) {
+            return error
+
+        }
+    }
+
 
     async filtrarPorMonitor1(monitor1: string): Promise<Controle[]> {
         try {
@@ -181,11 +205,39 @@ export default class ColecaoControle implements ControleRepositorio {
         }
     }
 
+    async filtrarPorMonitor1NumeroSerie(monitor1numeroserie: string): Promise<Controle[]> {
+        try {
+            if (monitor1numeroserie) {
+
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorMonitor1/` + monitor1numeroserie)
+                return response.data
+            }
+
+        } catch (error) {
+            return error
+
+        }
+    }
+
     async filtrarPorMonitor2(monitor2: string): Promise<Controle[]> {
         try {
             if (monitor2) {
 
                 const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorMonitor2/` + monitor2)
+                return response.data
+            }
+
+        } catch (error) {
+            return error
+
+        }
+    }
+
+    async filtrarPorMonitor2NumeroSerie(moniotor2numeroserie: string): Promise<Controle[]> {
+        try {
+            if (moniotor2numeroserie) {
+
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorMonitor1/` + moniotor2numeroserie)
                 return response.data
             }
 

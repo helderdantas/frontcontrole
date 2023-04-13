@@ -9,8 +9,11 @@ export default interface ControleRepositorio{
     filtrarPorSetor(nomeSetor: string): Promise<Controle[]>
     filtrarPorSubSetor(nomeSubSetor: string): Promise<Controle[]>
     filtrarPorCpu(cpu: string): Promise<Controle[]>
+    filtrarPorCpuNumeroSerie(cpuNumeroSerie: string): Promise<Controle[]>
     filtrarPorMonitor1(monitor1: string): Promise<Controle[]>
+    filtrarPorMonitor1NumeroSerie(monitor1NumeroSerie: string): Promise<Controle[]>
     filtrarPorMonitor2(monitor2: string): Promise<Controle[]>
+    filtrarPorMonitor2NumeroSerie(monitor2NumeroSerie: string): Promise<Controle[]>
     filtrarPorImpressora(impressora: string): Promise<Controle[]>
     
 }

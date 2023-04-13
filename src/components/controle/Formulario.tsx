@@ -21,8 +21,11 @@ export default function Formulario(props: FormularioProps) {
     const [subsetor, setSubsetor] = useState(props.controle?.subsetor ?? '')
     const [ilha, setIlha] = useState(props.controle?.ilha ?? '')
     const [cpu, setCpu] = useState(props.controle?.cpu ?? '')
+    const [cpunumeroserie, setCpunumeroserie] = useState(props.controle?.cpunumeroserie ?? '')
     const [monitor1, setMonitor1] = useState(props.controle?.monitor1 ?? '')
+    const [monitor1numeroserie, setMonitor1numeroserie] = useState(props.controle?.monitor1numeroserie ?? '')
     const [monitor2, setMonitor2] = useState(props.controle?.monitor2 ?? '')
+    const [monitor2numeroserie, setMonitor2numeroserie] = useState(props.controle?.monitor2numeroserie ?? '')
     const [impressora, setImpressora] = useState(props.controle?.impressora ?? '')
     const [telefone, setTelefone] = useState(props.controle?.telefone ?? '')
     const [observacao, setObservacao] = useState(props.controle?.observacao ?? null)
@@ -75,16 +78,30 @@ export default function Formulario(props: FormularioProps) {
                 valor={ilha.toUpperCase()}
                 valorMudou={setIlha}
             />
-           
+
             <Entrada
                 texto="Cpu"
                 valor={cpu.toUpperCase()}
                 valorMudou={setCpu}
             />
+
+            <Entrada
+                texto="CPU-NS"
+                valor={cpunumeroserie.toUpperCase()}
+                valorMudou={setCpunumeroserie}
+            />
+
             <Entrada
                 texto="Monitor1"
                 valor={monitor1.toUpperCase()}
                 valorMudou={setMonitor1}
+
+            />
+
+            <Entrada
+                texto="Monitor1-NS"
+                valor={monitor1numeroserie.toUpperCase()}
+                valorMudou={setMonitor1numeroserie}
 
             />
             <Entrada
@@ -93,13 +110,21 @@ export default function Formulario(props: FormularioProps) {
                 valorMudou={setMonitor2}
 
             />
-             <Entrada
+
+            <Entrada
+                texto="Monitor2-NS"
+                valor={monitor2numeroserie.toUpperCase()}
+                valorMudou={setMonitor2numeroserie}
+
+            />
+
+            <Entrada
                 texto="Impressora"
                 valor={impressora.toUpperCase()}
                 valorMudou={setImpressora}
 
             />
-             <Entrada
+            <Entrada
                 texto="Telefonne"
                 valor={telefone.toUpperCase()}
                 valorMudou={setTelefone}
@@ -115,7 +140,7 @@ export default function Formulario(props: FormularioProps) {
 
             <div className="mt-5 flex justify-end">
                 <Botao cor="blue" className="mr-2"
-                    onClick={() => props.controleMudou?.(new Controle(setor.toUpperCase(), subsetor.toUpperCase(), ilha.toUpperCase(), cpu.toUpperCase(), monitor1.toUpperCase(), monitor2.toUpperCase(), impressora.toUpperCase(), telefone, observacao.toUpperCase(), id, createAt, updateAt))}>
+                    onClick={() => props.controleMudou?.(new Controle(setor.toUpperCase(), subsetor.toUpperCase(), ilha.toUpperCase(), cpu.toUpperCase(), cpunumeroserie.toUpperCase(), monitor1.toUpperCase(), monitor1numeroserie.toUpperCase(), monitor2.toUpperCase(), monitor2numeroserie.toUpperCase(), impressora.toUpperCase(), telefone, observacao.toUpperCase(), id, createAt, updateAt))}>
                     {id ? 'Alterar' : 'Criar'}
 
                 </Botao>

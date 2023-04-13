@@ -35,6 +35,7 @@ export default function Relatorio() {
     function obterTodosContoles() {
         repo.obterTodosControles().then(controles => {
             setControles(controles)
+            console.log(controles)
             setVisivel('tabela')
         })
     }

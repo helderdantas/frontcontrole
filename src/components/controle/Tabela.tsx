@@ -17,13 +17,15 @@ export default function Tabela(props: TabelaProps) {
     function renderizarCabecalho() {
         return (
             <tr className="flex-wrap">
-                <th className="text-left p-1 text-xs">Código</th>
                 <th className="text-left p-1 text-xs">Setor</th>
                 <th className="text-left p-1 text-xs">SubSetor</th>
                 <th className="text-left p-1 text-xs">Ilha</th>
                 <th className="text-left p-1 text-xs">Cpu</th>
+                <th className="text-left p-1 text-xs">Cpu-NS</th>
                 <th className="text-left p-1 text-xs">Monitor1</th>
+                <th className="text-left p-1 text-xs">Monitor1-NS</th>
                 <th className="text-left p-1 text-xs">Monitor2</th>
+                <th className="text-left p-1 text-xs">Monitor2-NS</th>
                 <th className="text-left p-1 text-xs">Impressora</th>
                 <th className="text-left p-1 text-xs">Telefone</th>
                 <th className="text-left p-1 text-xs">Observação</th>
@@ -38,13 +40,15 @@ export default function Tabela(props: TabelaProps) {
         return props.controles?.map((controle, i) => {
             return (
                 <tr key={controle.id} className={`flex-wrap ${i % 2 === 0 ? 'bg-gray-300' : 'bg-gray-400'}`}>
-                    <td className="text-left p-1 text-xs">{controle.id}</td>
                     <td className="text-left p-1 text-xs">{controle.setor}</td>
                     <td className="text-left p-1 text-xs">{controle.subsetor}</td>
                     <td className="text-left p-1 text-xs">{controle.ilha}</td>
                     <td className="text-left p-1 text-xs">{controle.cpu}</td>
+                    <td className="text-left p-1 text-xs">{controle.cpunumeroserie}</td>
                     <td className="text-left p-1 text-xs">{controle.monitor1}</td>
+                    <td className="text-left p-1 text-xs">{controle.monitor1numeroserie}</td>
                     <td className="text-left p-1 text-xs">{controle.monitor2}</td>
+                    <td className="text-left p-1 text-xs">{controle.monitor2numeroserie}</td>
                     <td className="text-left p-1 text-xs">{controle.impressora}</td>
                     <td className="text-left p-1 text-xs">{controle.telefone}</td>
                     <td className="text-left p-1 text-xs">{controle.observacao}</td>
