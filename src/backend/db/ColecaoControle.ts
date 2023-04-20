@@ -1,6 +1,8 @@
 import Controle from "../../core/controle/Controle";
 import ControleRepositorio from "../../core/controle/ControleRepositorio";
-const axios = require('axios');
+// alteração teste
+import axios from "axios";
+// const axios = require('axios');
 
 
 
