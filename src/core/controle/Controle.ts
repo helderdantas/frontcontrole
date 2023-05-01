@@ -4,11 +4,12 @@ export default class Controle{
     #setor: string
     #subsetor: string
     #ilha: string
-    #cpu: string
+    #baia: string
+    #cputombo: string
     #cpunumeroserie: string
-    #monitor1: string
+    #monitor1tombo: string
     #monitor1numeroserie: string
-    #monitor2: string
+    #monitor2tombo: string
     #monitor2numeroserie: string
     #impressora: string
     #telefone: string
@@ -16,15 +17,16 @@ export default class Controle{
     #createAt:Date
     #updateAt:Date
 
-    constructor(setor: string, subsetor: string, ilha:string, cpu:string, cpunumeroserie: string, monitor1: string, monitor1numeroserie: string, monitor2:string, monitor2numeroserie: string, impressora:string, telefone:string, observacao:string, id: string=null, createAt:Date, updateAt:Date){
+    constructor(setor: string, subsetor: string, ilha:string, baia:string, cputombo:string, cpunumeroserie: string, monitor1tombo: string, monitor1numeroserie: string, monitor2tombo:string, monitor2numeroserie: string, impressora:string, telefone:string, observacao:string, id: string=null, createAt:Date, updateAt:Date){
         this.#setor=setor
         this.#subsetor=subsetor
         this.#ilha=ilha
-        this.#cpu=cpu
+        this.#baia=baia
+        this.#cputombo=cputombo
         this.#cpunumeroserie=cpunumeroserie
-        this.#monitor1=monitor1
+        this.#monitor1tombo=monitor1tombo
         this.#monitor1numeroserie=monitor1numeroserie
-        this.#monitor2=monitor2
+        this.#monitor2tombo=monitor2tombo
         this.#monitor2numeroserie=monitor2numeroserie
         this.#impressora=impressora
         this.#telefone=telefone
@@ -35,7 +37,7 @@ export default class Controle{
     }
 
     static vazio(){
-        return new Controle('','','','','','','','','','','','',null,null,null)
+        return new Controle('','','','','','','','','','','','','',null,null,null)
     }
 
     get id(){
@@ -54,25 +56,28 @@ export default class Controle{
     get ilha(){
         return this.#ilha
     }
+    get baia(){
+        return this.#baia
+    }
 
-    get cpu(){
-        return this.#cpu
+    get cputombo(){
+        return this.#cputombo
     }
     
     get cpunumeroserie(){
         return this.#cpunumeroserie
     }
 
-    get monitor1(){
-        return this.#monitor1
+    get monitor1tombo(){
+        return this.#monitor1tombo
     }
 
     get monitor1numeroserie(){
         return this.#monitor1numeroserie
     }
 
-    get monitor2(){
-        return this.#monitor2
+    get monitor2tombo(){
+        return this.#monitor2tombo
     }
 
     get monitor2numeroserie(){

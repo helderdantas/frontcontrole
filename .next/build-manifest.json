@@ -30,15 +30,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/home": [
+    "/setores": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/home.js"
-    ],
-    "/relatorios": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/relatorios.js"
+      "static/chunks/pages/setores.js"
     ],
     "/usuarios": [
       "static/chunks/webpack.js",

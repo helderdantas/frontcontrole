@@ -79,6 +79,12 @@ export default function Home() {
                   <a href="/usuarios">Usuários</a>
                 </Botao>
                 <Botao className="mb-3 m-2">
+                  <a href="/setores">Setores</a>
+                </Botao>
+                <Botao className="mb-3 m-2">
+                  <a href="/subSetores">Sub-Setores</a>
+                </Botao>
+                <Botao className="mb-3 m-2">
                   <a href="/relatorios">Relatórios</a>
                 </Botao>
                 <Botao className="bg-red-900 mb-3 m-2"

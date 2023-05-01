@@ -15,18 +15,19 @@ export default class ColecaoControle implements ControleRepositorio {
                 setor: controle.setor,
                 subsetor: controle.subsetor,
                 ilha: controle.ilha,
-                cpu: controle.cpu,
+                baia: controle.baia,
+                cputombo: controle.cputombo,
                 cpunumeroserie: controle.cpunumeroserie,
-                monitor1: controle.monitor1,
+                monitor1tombo: controle.monitor1tombo,
                 monitor1numeroserie: controle.monitor1numeroserie,
-                monitor2: controle.monitor2,
+                monitor2tombo: controle.monitor2tombo,
                 monitor2numeroserie: controle.monitor2numeroserie,
                 impressora: controle.impressora,
                 telefone: controle.telefone,
                 observacao: controle.observacao,
 
             };
-
+            console.log(body)
             var response = await axios.post(`${process.env.NEXT_PUBLIC_URL}criarControle/`, body, {
                 headers: {
                     autorizacao: "Bearer " + sessionStorage.getItem("token"),
@@ -47,11 +48,12 @@ export default class ColecaoControle implements ControleRepositorio {
                     url: `${process.env.NEXT_PUBLIC_URL}atualizarControle/` + controle.id,
                     data: {
                         ilha: controle.ilha,
-                        cpu: controle.cpu,
+                        baia: controle.baia,
+                        cputombo: controle.cputombo,
                         cpunumeroserie: controle.cpunumeroserie,
-                        monitor1: controle.monitor1,
+                        monitor1tombo: controle.monitor1tombo,
                         monitor1numeroserie: controle.monitor1numeroserie,
-                        monitor2: controle.monitor2,
+                        monitor2tombo: controle.monitor2tombo,
                         monitor2numeroserie: controle.monitor2numeroserie,
                         impressora: controle.impressora,
                         telefone: controle.telefone,
@@ -148,7 +150,7 @@ export default class ColecaoControle implements ControleRepositorio {
     async filtrarPorSubSetor(subsetor: string): Promise<Controle[]> {
 
         try {
-
+            console.log(subsetor)
             if (subsetor) {
                 const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorSubSetor/` + subsetor)
 
@@ -162,11 +164,12 @@ export default class ColecaoControle implements ControleRepositorio {
         }
     }
 
-    async filtrarPorCpu(cpu: string): Promise<Controle[]> {
+    async filtrarPorCpuTombo(cputombo: string): Promise<Controle[]> {
         try {
-            if (cpu) {
-
-                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorCpu/` + cpu)
+            if (cputombo) {
+                console.log('entrei do cpu tombo')
+                console.log(cputombo)
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorCpuTombo/`+ cputombo)
                 return response.data
             }
 
@@ -180,7 +183,7 @@ export default class ColecaoControle implements ControleRepositorio {
         try {
             if (cpunumeroserie) {
 
-                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorCpu/` + cpunumeroserie)
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorCpuNumeroSerie/` + cpunumeroserie)
                 return response.data
             }
 
@@ -191,11 +194,11 @@ export default class ColecaoControle implements ControleRepositorio {
     }
 
 
-    async filtrarPorMonitor1(monitor1: string): Promise<Controle[]> {
+    async filtrarPorMonitor1Tombo(monitor1tombo: string): Promise<Controle[]> {
         try {
-            if (monitor1) {
+            if (monitor1tombo) {
 
-                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorMonitor1/` + monitor1)
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorMonitor1Tombo/` + monitor1tombo)
                 return response.data
             }
 
@@ -209,7 +212,7 @@ export default class ColecaoControle implements ControleRepositorio {
         try {
             if (monitor1numeroserie) {
 
-                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorMonitor1/` + monitor1numeroserie)
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorMonitor1NumeroSerie/` + monitor1numeroserie)
                 return response.data
             }
 
@@ -219,11 +222,11 @@ export default class ColecaoControle implements ControleRepositorio {
         }
     }
 
-    async filtrarPorMonitor2(monitor2: string): Promise<Controle[]> {
+    async filtrarPorMonitor2Tombo(monitor2tombo: string): Promise<Controle[]> {
         try {
-            if (monitor2) {
+            if (monitor2tombo) {
 
-                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorMonitor2/` + monitor2)
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorMonitor2Tombo/` + monitor2tombo)
                 return response.data
             }
 
@@ -233,11 +236,11 @@ export default class ColecaoControle implements ControleRepositorio {
         }
     }
 
-    async filtrarPorMonitor2NumeroSerie(moniotor2numeroserie: string): Promise<Controle[]> {
+    async filtrarPorMonitor2NumeroSerie(monitor2numeroserie: string): Promise<Controle[]> {
         try {
-            if (moniotor2numeroserie) {
+            if (monitor2numeroserie) {
 
-                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorMonitor1/` + moniotor2numeroserie)
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorMonitor2NumeroSerie/` + monitor2numeroserie)
                 return response.data
             }
 
@@ -253,6 +256,20 @@ export default class ColecaoControle implements ControleRepositorio {
             if (impressora) {
 
                 const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorImpressora/` + impressora)
+                return response.data
+            }
+
+        } catch (error) {
+            return error
+
+        }
+    }
+
+    async filtrarPorObservacao(valor: string): Promise<Controle[]> {
+        try {
+            if (valor) {
+
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}filtrarPorObservacao/` + valor)
                 return response.data
             }
 
