@@ -7,6 +7,10 @@ import Controle from "../core/controle/Controle";
 import ControleRepositorio from "../core/controle/ControleRepositorio";
 import ColecaoControle from "../backend/db/ColecaoControle";
 import Deslogar from "../components/Deslogar";
+import { Row } from "react-bootstrap";
+
+
+import Rota from "../components/Rota";
 
 
 export default function Home() {
@@ -59,6 +63,12 @@ export default function Home() {
 
   }
 
+ /* const rota = (valor:string) => {
+      
+   return Router.push(`/${valor}`);
+  }
+  */
+
   return (
     <>
 
@@ -71,26 +81,21 @@ export default function Home() {
           {visivel === 'tabela' ? (
             <>
               <div className="flex justify-end">
+                <Row>
                 <Botao className="mb-3 m-2"
                   onClick={novoControle}>
                   Novo controle
                 </Botao>
-                <Botao  className="mb-3 m-2">
-                  <a href="/usuarios">Usuários</a>
-                </Botao>
-                <Botao className="mb-3 m-2">
-                  <a href="/setores">Setores</a>
-                </Botao>
-                <Botao className="mb-3 m-2">
-                  <a href="/subSetores">Sub-Setores</a>
-                </Botao>
-                <Botao className="mb-3 m-2">
-                  <a href="/relatorios">Relatórios</a>
-                </Botao>
-                <Botao className="bg-red-900 mb-3 m-2"
+                <Rota rota="usuarios">Usuarios</Rota>
+                <Rota rota="setores">Setores</Rota>
+                <Rota rota="subSetores">SubSetores</Rota>
+                <Rota rota="relatorios">Relátorios</Rota>
+
+                <Botao className="bg-red-800 mb-3 m-2"
                   onClick={Deslogar}>
                   Sair
                 </Botao>
+                </Row>
               </div>
               
 

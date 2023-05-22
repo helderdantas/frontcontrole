@@ -1,5 +1,8 @@
+import { Alert } from "react-bootstrap";
 import Controle from "../../core/controle/Controle"
 import { IconeEdicao, IconeDeletar } from "../Icones"
+
+import QRCode from "react-qr-code";
 
 interface TabelaProps {
     controles: Controle[]
@@ -36,6 +39,23 @@ export default function Tabela(props: TabelaProps) {
 
         )
     }
+
+
+    function Qrcode() {
+
+
+        return(
+        alert(
+        <div style={{ height: "100 px", margin: "0 auto", maxWidth: 64, width: "100%" }}>
+            <QRCode
+                size={256}
+                style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                value={"valor"}
+                viewBox={`0 0 256 256`}
+            />
+        </div>))
+    }
+
     // Renderiza os dados do controle no tabela e formulario
     function renderizarDados() {
         return props.controles?.map((controle, i) => {
@@ -54,12 +74,14 @@ export default function Tabela(props: TabelaProps) {
                     <td className="text-left p-1 text-xs">{controle.impressora}</td>
                     <td className="text-left p-1 text-xs">{controle.telefone}</td>
                     <td className="text-left p-1 text-xs">{controle.observacao}</td>
-                    {exibirAcoes ?  <th className="p-1 text-xs">{renderizarAcoes(controle)}</th>: false}
+                    {exibirAcoes ? <th className="p-1 text-xs">{renderizarAcoes(controle)}</th> : false}
                 </tr>
             )
 
         })
     }
+
+
 
     // Renderiza os botoes editar e finalizar na tabela de controles
     function renderizarAcoes(controle: Controle) {
@@ -90,6 +112,16 @@ export default function Tabela(props: TabelaProps) {
                     </button>
                 ) : false
                 }
+
+                <button onClick={() => Qrcode()} className={`
+                      flex justify-center items-center
+                      text-red-600 rounded-full p-2 m-1
+                      hover:bg-purple-50
+                  `}>
+                    {IconeEdicao}
+                    <>QRCODE</>
+                </button>
+
             </td>
         )
     }
@@ -108,5 +140,6 @@ export default function Tabela(props: TabelaProps) {
             </tbody>
 
         </table>
+
     )
 }

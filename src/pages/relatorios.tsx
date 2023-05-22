@@ -10,6 +10,7 @@ import Entrada from "../components/Entrada";
 import EntradaListarCamposTabela from "../components/relatorio/EntradaListarCamposTabela";
 import Deslogar from "../components/Deslogar"
 import { Col, Container, Row } from "react-bootstrap";
+import Rota from "../components/Rota";
 
 
 
@@ -99,10 +100,7 @@ export default function Relatorio() {
                     {visivel === 'tabela' ? (
                         <Container>
                             <Row className="flex justify-end">
-                                <Botao className="mb-2 m-2">
-                                    <a href="/home">Home</a>
-                                </Botao>
-
+                                <Rota rota="home">Home</Rota>
                                 <Botao onClick={Deslogar} className="bg-red-800 mb-2 m-2">
                                     Sair
                                 </Botao>

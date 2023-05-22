@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import Tabela from "../components/areaAdm/setor/Tabela";
 import Setor from "../core/setor/Setor"
 import SetorRepositorio from "../core/setor/SetorRepositorio";
+import Rota from "../components/Rota";
 
 export default function Suport() {
 
@@ -91,9 +92,7 @@ export default function Suport() {
                                     onClick={novoSetor}>
                                     Novo setor
                                 </Botao>
-                                <Botao cor="blue" className="mb-3 m-2">
-                                    <a href="/home">Home</a>
-                                </Botao>
+                                <Rota rota="home">Home</Rota>
 
                             </div>
 

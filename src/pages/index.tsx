@@ -74,7 +74,7 @@ export default function Login() {
         alert(e);
       }
 
-      console.log(loginUser);
+   
     }
   };
 

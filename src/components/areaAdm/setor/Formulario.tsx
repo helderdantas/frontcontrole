@@ -16,8 +16,8 @@ interface FormularioProps {
 export default function Formulario(props: FormularioProps) {
     const id = props.setor?.id
     const ativo = props.setor?.ativo
-    const createAt = props.setor?.createAt
-    const updateAt = props.setor?.updateAt
+    const createAt = props.setor?.createdAt
+    const updateAt = props.setor?.updatedAt
     const [nome, setNome] = useState(props.setor?.nome ?? '')
     const [telefone, setTelefone] = useState(props.setor?.telefone ?? null)
     return (

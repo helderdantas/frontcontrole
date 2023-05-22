@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import Tabela from "../components/areaAdm/subSetor/Tabela";
 import SubSetor from "../core/subSetor/SubSetor"
 import SubSetorRepositorio from "../core/subSetor/SubSetorRepositorio";
+import Rota from "../components/Rota";
 
 export default function Suport() {
 
@@ -89,10 +90,7 @@ export default function Suport() {
                                 onClick={novoSubSetor}>
                                 Novo subSetor
                             </Botao>
-                            <Botao cor="blue" className="mb-3 m-2">
-                                <a href="/home">Home</a>
-                            </Botao>
-
+                            <Rota rota="home">Home</Rota>
                         </div>
 
                         <Tabela subSetors={subSetores}

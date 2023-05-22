@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/components/controle/Tabela.jsx"  ],
   "exclude": [
     "node_modules"
   ]
