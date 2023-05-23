@@ -8,7 +8,7 @@ import SubSetor from "../core/subSetor/SubSetor"
 import SubSetorRepositorio from "../core/subSetor/SubSetorRepositorio";
 import Rota from "../components/Rota";
 
-export default function Suport() {
+export default function SubSetores() {
 
 
     const repo: SubSetorRepositorio = new ColecaoSubSetor()

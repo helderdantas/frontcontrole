@@ -12,8 +12,7 @@ interface Dados {
 export default function rotas(props: Dados) {
 
     const rota = (valor:string) => {
-      
-        return Router.push(`/${valor}`);
+              return Router.push(`/${valor}`);
        }
      
     

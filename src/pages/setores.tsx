@@ -8,7 +8,7 @@ import Setor from "../core/setor/Setor"
 import SetorRepositorio from "../core/setor/SetorRepositorio";
 import Rota from "../components/Rota";
 
-export default function Suport() {
+export default function Setores() {
 
 
     const repo: SetorRepositorio = new ColecaoSetor()

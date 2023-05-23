@@ -37,7 +37,7 @@ export default function Login() {
       try {
 
         const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}tokens/`, loginUser);
-        console.log(res.data)
+        
         sessionStorage.setItem("token", res.data.token);
       } catch (error) {
 
@@ -55,7 +55,7 @@ export default function Login() {
             autorizacao: "Bearer " + sessionStorage.getItem("token"),
           },
         });
-        console.log(res)
+        
         Router.push("/home");
       } catch {
         Router.push("/");

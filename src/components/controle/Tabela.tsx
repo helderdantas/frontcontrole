@@ -1,20 +1,18 @@
-import { Alert } from "react-bootstrap";
 import Controle from "../../core/controle/Controle"
 import { IconeEdicao, IconeDeletar } from "../Icones"
-
-import QRCode from "react-qr-code";
 
 interface TabelaProps {
     controles: Controle[]
     controleSelecionado?: (controle: Controle) => void
     controleDeletado?: (controle: Controle) => void
+    qrCode?: (controle: Controle) => void
 
 }
 
 // Componente que criar o modelo de tabela
 export default function Tabela(props: TabelaProps) {
 
-    const exibirAcoes = props.controleSelecionado || props.controleDeletado
+    const exibirAcoes = props.controleSelecionado || props.controleDeletado || props.qrCode
 
     // Renderiza o cabelcaho nas pagina onde ele é controle
     function renderizarCabecalho() {
@@ -40,22 +38,7 @@ export default function Tabela(props: TabelaProps) {
         )
     }
 
-
-    function Qrcode() {
-
-
-        return(
-        alert(
-        <div style={{ height: "100 px", margin: "0 auto", maxWidth: 64, width: "100%" }}>
-            <QRCode
-                size={256}
-                style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-                value={"valor"}
-                viewBox={`0 0 256 256`}
-            />
-        </div>))
-    }
-
+    
     // Renderiza os dados do controle no tabela e formulario
     function renderizarDados() {
         return props.controles?.map((controle, i) => {
@@ -86,7 +69,6 @@ export default function Tabela(props: TabelaProps) {
     // Renderiza os botoes editar e finalizar na tabela de controles
     function renderizarAcoes(controle: Controle) {
 
-        // <Link href="/suport/editar">editar</Link> - substituir no lugar do botao
         return (
             <td className="flex justify-center">
                 {props.controleSelecionado ? (
@@ -112,15 +94,16 @@ export default function Tabela(props: TabelaProps) {
                     </button>
                 ) : false
                 }
-
-                <button onClick={() => Qrcode()} className={`
+                {props.qrCode ? (
+                <button onClick={() =>props.qrCode?.(controle)} className={`
                       flex justify-center items-center
-                      text-red-600 rounded-full p-2 m-1
+                      text-blue-600 rounded-full p-2 m-1
                       hover:bg-purple-50
                   `}>
-                    {IconeEdicao}
+                    
                     <>QRCODE</>
                 </button>
+                ):false}
 
             </td>
         )
