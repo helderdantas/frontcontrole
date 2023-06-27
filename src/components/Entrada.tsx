@@ -11,7 +11,7 @@ interface EntradaProps {
 export default function Formulario(props: EntradaProps){
     return (
         <div className="flex flex-col">
-            <label className="mb-1 mt-3">
+            <label className="mb-1 mt-3 flex justify-start">
             {props.texto}        
             </label>
             <input 

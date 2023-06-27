@@ -36,8 +36,8 @@ export default function Login() {
       setIsWaitingResponse(true);
       try {
 
-        const res = await axios.post("http://localhost:3030/tokens/", loginUser);
-        console.log(res.data)
+        const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}tokens/`, loginUser);
+        
         sessionStorage.setItem("token", res.data.token);
       } catch (error) {
 
@@ -50,12 +50,12 @@ export default function Login() {
       try {
 
 
-        const res = await axios.get("http://localhost:3030/users/obterTodosUsers", {
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}users/obterTodosUsers`, {
           headers: {
             autorizacao: "Bearer " + sessionStorage.getItem("token"),
           },
         });
-        console.log(res)
+        
         Router.push("/home");
       } catch {
         Router.push("/");
@@ -74,7 +74,7 @@ export default function Login() {
         alert(e);
       }
 
-      console.log(loginUser);
+   
     }
   };
 

@@ -7,6 +7,7 @@ import User from "../core/user/User";
 import UserRepositorio from "../core/user/UserRepositorio";
 import ColecaoUser from "../backend/db/ColecaoUser";
 import Deslogar from "../components/Deslogar";
+import Rota from "../components/Rota";
 
 
 export default function Usuarios() {
@@ -87,9 +88,7 @@ export default function Usuarios() {
                     {visivel === 'tabela' ? (
                         <>
                             <div className="flex justify-end">
-                                <Botao className="mb-3 m-2">
-                                    <a href="/home">Home</a>
-                                </Botao>
+                            <Rota rota="home">Home</Rota>
                                 <Botao className="mb-3 m-2"
                                     onClick={novoUser}>
                                     Cadastrar Usuário
