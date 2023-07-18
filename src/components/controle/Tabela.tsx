@@ -29,7 +29,6 @@ export default function Tabela(props: TabelaProps) {
                 <th className="text-left p-1 text-xs">Monitor2-T</th>
                 <th className="text-left p-1 text-xs">Monitor2-NS</th>
                 <th className="text-left p-1 text-xs">Impressora</th>
-                <th className="text-left p-1 text-xs">Telefone</th>
                 <th className="text-left p-1 text-xs">Observação</th>
                 {exibirAcoes ? <th className="p-1 text-xs">Ações</th> : false}
 
@@ -55,7 +54,6 @@ export default function Tabela(props: TabelaProps) {
                     <td className="text-left p-1 text-xs">{controle.monitor2tombo}</td>
                     <td className="text-left p-1 text-xs">{controle.monitor2numeroserie}</td>
                     <td className="text-left p-1 text-xs">{controle.impressora}</td>
-                    <td className="text-left p-1 text-xs">{controle.telefone}</td>
                     <td className="text-left p-1 text-xs">{controle.observacao}</td>
                     {exibirAcoes ? <th className="p-1 text-xs">{renderizarAcoes(controle)}</th> : false}
                 </tr>

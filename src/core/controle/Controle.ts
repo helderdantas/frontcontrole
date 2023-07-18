@@ -12,12 +12,11 @@ export default class Controle{
     #monitor2tombo: string
     #monitor2numeroserie: string
     #impressora: string
-    #telefone: string
     #observacao: string
     #createAt:Date
     #updateAt:Date
 
-    constructor(setor: string, subsetor: string, ilha:string, baia:string, cputombo:string, cpunumeroserie: string, monitor1tombo: string, monitor1numeroserie: string, monitor2tombo:string, monitor2numeroserie: string, impressora:string, telefone:string, observacao:string, id: string=null, createAt:Date, updateAt:Date){
+    constructor(setor: string, subsetor: string, ilha:string, baia:string, cputombo:string, cpunumeroserie: string, monitor1tombo: string, monitor1numeroserie: string, monitor2tombo:string, monitor2numeroserie: string, impressora:string, observacao:string, id: string=null, createAt:Date, updateAt:Date){
         this.#setor=setor
         this.#subsetor=subsetor
         this.#ilha=ilha
@@ -29,7 +28,6 @@ export default class Controle{
         this.#monitor2tombo=monitor2tombo
         this.#monitor2numeroserie=monitor2numeroserie
         this.#impressora=impressora
-        this.#telefone=telefone
         this.#observacao=observacao
         this.#createAt=createAt
         this.#updateAt=updateAt
@@ -37,7 +35,7 @@ export default class Controle{
     }
 
     static vazio(){
-        return new Controle('','','','','','','','','','','','','',null,null,null)
+        return new Controle('','','','','','','','','','','','',null,null,null)
     }
 
     get id(){
@@ -86,10 +84,6 @@ export default class Controle{
 
     get impressora(){
         return this.#impressora
-    }
-
-    get telefone(){
-        return this.#telefone
     }
 
     get observacao(){

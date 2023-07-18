@@ -23,7 +23,6 @@ export default class ColecaoControle implements ControleRepositorio {
                 monitor2tombo: controle.monitor2tombo,
                 monitor2numeroserie: controle.monitor2numeroserie,
                 impressora: controle.impressora,
-                telefone: controle.telefone,
                 observacao: controle.observacao,
 
             };
@@ -56,7 +55,6 @@ export default class ColecaoControle implements ControleRepositorio {
                         monitor2tombo: controle.monitor2tombo,
                         monitor2numeroserie: controle.monitor2numeroserie,
                         impressora: controle.impressora,
-                        telefone: controle.telefone,
                         observacao: controle.observacao,
                     },
                     headers: {

@@ -9,7 +9,7 @@ import ColecaoUser from "../backend/db/ColecaoUser";
 //import { Alerta } from "../components/Alert";
 
 export default function Login() {
-  
+
   const repo: UserRepositorio = new ColecaoUser();
 
   // muda de login para change password
@@ -35,9 +35,9 @@ export default function Login() {
 
       setIsWaitingResponse(true);
       try {
-
-        const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}tokens/`, loginUser);
         
+        const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}tokens/`, loginUser);
+
         sessionStorage.setItem("token", res.data.token);
       } catch (error) {
 
@@ -49,13 +49,12 @@ export default function Login() {
 
       try {
 
-
         const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}users/obterTodosUsers`, {
           headers: {
             autorizacao: "Bearer " + sessionStorage.getItem("token"),
           },
         });
-        
+
         Router.push("/home");
       } catch {
         Router.push("/");
@@ -74,7 +73,7 @@ export default function Login() {
         alert(e);
       }
 
-   
+
     }
   };
 
@@ -86,7 +85,7 @@ export default function Login() {
       "password": password,
     };
     setPassword("");
-    const user = await repo.atualizarUserSenha(email,password)
+    const user = await repo.atualizarUserSenha(email, password)
   }
 
   //mudando o valor das variáveis

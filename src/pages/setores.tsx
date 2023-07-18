@@ -50,8 +50,11 @@ export default function Setores() {
     // Metodo para criar ou atualizar setor
     async function salvarSetor(setor: Setor) {
         if (setor.id) {
+            console.log(setor)
             await repo.atualizarTelefoneSetor(setor) // atualiza telefone do setor existente
         } else {
+            console.log("entrei na rota criarsetor")
+            console.log(setor)
             await repo.criarSetor(setor) // cria um novo setor
 
         }
@@ -60,22 +63,13 @@ export default function Setores() {
 
     // Metodo que abre um formulario vazio para criar um novo setor
     function novoSetor() {
+
+        console.log("entrei na rota novosetor")
         setSetor(Setor.vazio())
         setVisivel('form')
 
     }
-    /*
-
-    // Metodo para listar todos os setors abertos e finalizados
-    function listarTodosSetors() {
-        repo.obterTodosSetors().then(setors => {
-            setSetors(setors)
-            setVisivel('tabela')
-        })
-
-    }
-    */
-
+   
     return (
         <>
             <div className={`
