@@ -30,7 +30,6 @@ export default function Formulario(props: FormularioProps) {
     const [monitor2tombo, setMonitor2tombo] = useState(props.controle?.monitor2tombo ?? '')
     const [monitor2numeroserie, setMonitor2numeroserie] = useState(props.controle?.monitor2numeroserie ?? '')
     const [impressora, setImpressora] = useState(props.controle?.impressora ?? '')
-    const [telefone, setTelefone] = useState(props.controle?.telefone ?? '')
     const [observacao, setObservacao] = useState(props.controle?.observacao ?? null)
 
 
@@ -130,12 +129,6 @@ export default function Formulario(props: FormularioProps) {
                 valorMudou={setImpressora}
 
             />
-            <Entrada
-                texto="Telefonne"
-                valor={telefone.toUpperCase()}
-                valorMudou={setTelefone}
-
-            />
 
             <Entrada
                 texto="Observacao"
@@ -146,7 +139,7 @@ export default function Formulario(props: FormularioProps) {
 
             <div className="mt-5 flex justify-end">
                 <Botao cor="blue" className="mr-2"
-                    onClick={() => props.controleMudou?.(new Controle(setor.toUpperCase(), subsetor.toUpperCase(), ilha.toUpperCase(), baia.toUpperCase(), cputombo.toUpperCase(), cpunumeroserie.toUpperCase(), monitor1tombo.toUpperCase(), monitor1numeroserie.toUpperCase(), monitor2tombo.toUpperCase(), monitor2numeroserie.toUpperCase(), impressora.toUpperCase(), telefone, observacao.toUpperCase(), id, createAt, updateAt))}>
+                    onClick={() => props.controleMudou?.(new Controle(setor.toUpperCase(), subsetor.toUpperCase(), ilha.toUpperCase(), baia.toUpperCase(), cputombo.toUpperCase(), cpunumeroserie.toUpperCase(), monitor1tombo.toUpperCase(), monitor1numeroserie.toUpperCase(), monitor2tombo.toUpperCase(), monitor2numeroserie.toUpperCase(), impressora.toUpperCase(), observacao.toUpperCase(), id, createAt, updateAt))}>
                     {id ? 'Alterar' : 'Criar'}
 
                 </Botao>

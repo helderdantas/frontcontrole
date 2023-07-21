@@ -99,8 +99,24 @@ export default function Setores() {
                             <Tabela setores={setores}
                                 setorSelecionado={setorSelecionado}
                                 setorFinalizado={setorFinalizado}
-
-                            />
+                            >
+                                {setores.map(setor => (
+                                    <div key={setor.id}>
+                                        <span>{setor.setor}</span>
+                                        <span>{setor.subsetor}</span>
+                                        <span>{setor.ilha}</span>
+                                        <span>{setor.baia}</span>
+                                        <span>{setor.cputombo}</span>
+                                        <span>{setor.cpunumeroserie}</span>
+                                        <span>{setor.monitor1tombo}</span>
+                                        <span>{setor.monitor1numeroserie}</span>
+                                        <span>{setor.monitor2tombo}</span>
+                                        <span>{setor.monitor2numeroserie}</span>
+                                        <span>{setor.impressora}</span>
+                                        <span>{setor.observacao}</span>
+                                    </div>
+                                ))}
+                            </Tabela>
                         </>
                     ) : (
 
