@@ -1,13 +1,7 @@
 {
-  "/_error": "pages/_error.js",
-  "/api/api": "pages/api/api.js",
-  "/home": "pages/home.html",
-  "/": "pages/index.html",
-  "/relatorios": "pages/relatorios.html",
-  "/setores": "pages/setores.html",
-  "/subSetores": "pages/subSetores.html",
-  "/usuarios": "pages/usuarios.html",
   "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
+  "/home": "pages/home.js",
+  "/": "pages/index.js"
 }
