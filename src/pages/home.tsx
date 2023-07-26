@@ -79,7 +79,7 @@ export default function Home() {
     bg-gradient-to-r from-slate-400 to-slate-500 text-neutral-50
     `}>
         {valor === 'qrcode' ? (
-          <Layout titulo={`Link: http://10.26.0.51  -  Código: ${controle.id}`}>
+          <Layout >
             <Botao className="bg-blue-800 mb-5 m-8"
               onClick={obterTodosContoles}>
               voltar

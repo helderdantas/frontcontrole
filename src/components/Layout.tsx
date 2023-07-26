@@ -14,7 +14,7 @@ function image (props) {
 }
 
 interface LayoutProps{
-    titulo:string
+    titulo?:string
     children:any
 }
 
