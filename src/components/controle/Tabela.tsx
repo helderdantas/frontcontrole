@@ -1,5 +1,6 @@
 import Controle from "../../core/controle/Controle"
 import { IconeEdicao, IconeDeletar } from "../Icones"
+import QRCode from "react-qr-code";
 
 interface TabelaProps {
     controles: Controle[]
@@ -68,42 +69,53 @@ export default function Tabela(props: TabelaProps) {
     function renderizarAcoes(controle: Controle) {
 
         return (
-            <td className="flex justify-center">
-                {props.controleSelecionado ? (
-                    <button onClick={() => props.controleSelecionado?.(controle)} className={`
-                      flex justify-center items-center
-                      text-green-600 rounded-full p-2 m-1
-                      hover:bg-purple-50
-                  `}>
-                        {IconeEdicao}
-                        <>Editar</>
-                    </button>
-                ) : false
-                }
+            <div>
+                <td className="flex justify-center">
+                    {props.controleSelecionado ? (
+                        <button onClick={() => props.controleSelecionado?.(controle)} className={`
+                        flex justify-center items-center
+                        text-green-600 rounded-full p-2 m-1
+                        hover:bg-purple-50
+                    `}>
+                            {IconeEdicao}
+                            <>Editar</>
+                        </button>
+                    ) : false
+                    }
 
-                {props.controleDeletado ? (
-                    <button onClick={() => props.controleDeletado?.(controle)} className={`
-                      flex justify-center items-center
-                      text-red-600 rounded-full p-2 m-1
-                      hover:bg-purple-50
-                  `}>
-                        {IconeDeletar}
-                        <>Deletar</>
+                    {props.controleDeletado ? (
+                        <button onClick={() => props.controleDeletado?.(controle)} className={`
+                        flex justify-center items-center
+                        text-red-600 rounded-full p-2 m-1
+                        hover:bg-purple-50
+                    `}>
+                            {IconeDeletar}
+                            <>Deletar</>
+                        </button>
+                    ) : false
+                    }
+                    {props.qrCode ? (
+                    <button onClick={() =>props.qrCode?.(controle)} className={`
+                        flex justify-center items-center
+                        text-blue-600 rounded-full p-2 m-1
+                        hover:bg-purple-50
+                    `}>
+                        
+                        <>QRCODE</>
                     </button>
-                ) : false
-                }
-                {props.qrCode ? (
-                <button onClick={() =>props.qrCode?.(controle)} className={`
-                      flex justify-center items-center
-                      text-blue-600 rounded-full p-2 m-1
-                      hover:bg-purple-50
-                  `}>
-                    
-                    <>QRCODE</>
-                </button>
-                ):false}
+                    ):false}
 
-            </td>
+                </td>
+                <div style={{margin: "5px 19px" }}>
+                    <td className="flex justify-center">
+                        <QRCode
+                            style={{ height: "63", maxWidth: "100%", width: "100%" }}
+                            value={`${process.env.NEXT_PUBLIC_URL_FRONTEND}?parametro=${controle.id}`}
+                            viewBox={`0 0 256 256`}
+                        />
+                    </td>
+                </div>
+            </div>
         )
     }
 
